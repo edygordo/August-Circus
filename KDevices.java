@@ -12,14 +12,14 @@ public class KDevices {
 			int K = scn.nextInt();
 			int x[] = new int[N+1];
 			int y[] = new int[N+1];
-			int R[] = new int[N+1];
+			double R[] = new double[N+1];
 			int I[] = new int[N+1];
 			for(int i=1;i<=N;i++)
 				x[i] = scn.nextInt();
 			for(int i=1;i<=N;i++)
 				y[i] = scn.nextInt();
 			for(int i=1;i<=N;i++)
-				R[i] = (int)Math.ceil( Math.pow((x[i]*x[i] + y[i]*y[i]), 0.5));
+				R[i] = Math.pow((x[i]*x[i] + y[i]*y[i]), 0.5);
 			
 			for(int i=1;i<=N;i++)
 			{
@@ -38,7 +38,7 @@ public class KDevices {
 				if(I[i] >= K && I[i] < min)
 					{
 					min = I[i];
-					ans = R[i];
+					ans = (int)Math.ceil(R[i]);
 					}
 			}
 			System.out.println(ans);
